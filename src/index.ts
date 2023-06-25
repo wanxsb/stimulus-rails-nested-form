@@ -16,7 +16,7 @@ export default class extends Controller {
   add (e: Event) {
     e.preventDefault()
 
-    const content: string = this.templateTarget.innerHTML.replace(/NEW_RECORD/g, new Date().getTime().toString())
+    const content: string = this.templateTarget.innerHTML.replace(/NEW_RECORD/, new Date().getTime().toString())
     this.targetTarget.insertAdjacentHTML('beforebegin', content)
   }
 
