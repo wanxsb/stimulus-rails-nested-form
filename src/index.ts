@@ -21,7 +21,7 @@ export default class extends Controller {
   add (e: Event) {
     e.preventDefault()
 
-    const content: string = this.templateTarget.innerHTML.replace(/#{this.newRecordExprValue}/g, new Date().getTime().toString())
+    const content: string = this.templateTarget.innerHTML.replace(new RegExp(this.newRecordExprValue, 'g'), new Date().getTime().toString())
     this.targetTarget.insertAdjacentHTML('beforebegin', content)
   }
 
